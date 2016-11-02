@@ -1,6 +1,5 @@
 define([
   'angular',
-  './<%= page %>-edit.service',
   'setup-apps/pages/<%= page %>/js/resources/<%= page %>.resource'
 ], function(
   angular,

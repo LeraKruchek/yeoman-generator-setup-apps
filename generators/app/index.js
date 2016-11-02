@@ -63,8 +63,10 @@ var SetupAppsGenerator = yeoman.Base.extend({
       dest: this.page + '/js/services/' + this.page + '-services.js'
     }];
     
-    var common = ['js/_app.js', 'js/_router.js', 'js/_config.js'];
-  
+    var common = ['js/_app.js', 'js/_routes.js', 'js/_config.js'];
+    var styles = ['app.less', 'appADP.less', 'main.less'];
+    var properties = ['message.properties', 'message_en.properties', 'message_en_US.properties'];
+    
     mkdirp.sync(this.page);
     
     common.forEach(function(source) {
@@ -73,7 +75,15 @@ var SetupAppsGenerator = yeoman.Base.extend({
     
     fileList.forEach(function(item) {
       this.template(item.source, item.dest, this.context);
-    }, this)
+    }, this);
+    
+    styles.forEach(function(theme) {
+      this.copy('styles/' + theme, this.page + '/styles/' + theme);
+    }, this);
+    
+    properties.forEach(function(property) {
+      this.copy('properties/' + property, this.page + '/properties/' + property);
+    }, this);
     
     this.copy('html/_edit.html', editPath + this.page + '-edit.html');
     this.copy('js/_components-settings.js', this.page + '/js/components-settings.js');

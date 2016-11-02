@@ -1,2 +1,18 @@
-<div>Preview page</div>
-<button (click)="<%= cameledPage %>PreviewCtrl.navigateToEditPage()">Go to edit</button>
+<div>
+  <h3 class="form-title">Preview page</h3>
+
+  <div class="wrapp-btn">
+    <button class="btn primary-btn" ng-bind="::'html.setupPages.common.new'| i18n"
+            title="{{::'html.setupPages.common.new'| i18n}}"></button>
+    <button class="btn primary-btn" ng-bind="::'html.setupPages.common.edit'| i18n"
+            title="{{::'html.setupPages.common.edit'| i18n}}"
+            ng-click="<%= cameledPage %>PreviewCtrl.goToEdit()"></button>
+    <button class="btn primary-btn" ng-bind="::'html.setupPages.common.delete'| i18n"
+            title="{{::'html.setupPages.common.delete'| i18n}}"></button>
+    <button class="btn primary-btn" ng-bind="::'html.setupPages.common.refresh'| i18n"
+            title="{{::'html.setupPages.common.refresh'| i18n}}"></button>
+  </div>
+
+  <krn-message class="error-message"></krn-message>
+  <krn-last-refresh-time-label last-refresh-time="<%= cameledPage %>.lastRefreshedTime"></krn-last-refresh-time-label>
+</div>

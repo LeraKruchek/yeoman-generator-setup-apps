@@ -1,1 +1,17 @@
-<div>Edit page</div>
+<div>
+  <h3 class="form-title">Edit page</h3>
+  <krn-last-refresh-time-label last-refresh-time="<%= cameledPage %>EditCtrl.lastRefreshedTime"></krn-last-refresh-time-label>
+
+  <div class="wrapp-btn">
+    <button class="btn primary-btn" ng-bind="::'html.setupPages.common.save'| i18n"
+            title="{{::'html.setupPages.common.save'| i18n}}"></button>
+    <button class="btn primary-btn" ng-bind="::'html.setupPages.common.saveAndNew'| i18n"
+            title="{{::'html.setupPages.common.saveAndNew'| i18n}}"></button>
+    <button class="btn primary-btn" ng-bind="::'html.setupPages.common.return'| i18n"
+            title="{{::'html.setupPages.common.return'| i18n}}"></button>
+    <button class="btn primary-btn" ng-bind="::'html.setupPages.common.refresh'| i18n"
+            title="{{::'html.setupPages.common.refresh'| i18n}}"></button>
+  </div>
+
+  <krn-message class="error-message"></krn-message>
+</div>
